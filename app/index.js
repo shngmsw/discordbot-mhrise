@@ -10,7 +10,6 @@ client.on("message", async (msg) => {
   Handler.call(msg);
   Dispandar.dispand(msg);
   TTS.main(msg);
-  removeRookie(msg);
 });
 
 client.on("ready", () => {
