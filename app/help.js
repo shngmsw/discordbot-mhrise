@@ -42,11 +42,11 @@ module.exports = function handleHelp(msg) {
                 ],
             },
         });
-    } else if (args[0] == '2') {
+    } else {
         msg.channel.send('', {
             embed: {
                 author: {
-                    name: 'ブキチの使い方(2/2)',
+                    name: 'ブキチの使い方',
                     icon_url: 'https://cdn.glitch.com/4ea6ca87-8ea7-482c-ab74-7aee445ea445%2Fthumbnails%2Fbukichi.jpg',
                 },
                 color: 0x1bc2a5,
@@ -83,7 +83,7 @@ module.exports = function handleHelp(msg) {
                     },
                     {
                         name: '自分のフレンドコードを表示',
-                        value: '```fc @自分```\n「フレンドコード」チャンネルの直近100件に書いてあればそちらを優先します。',
+                        value: '```fc @自分```',
                     },
                     {
                         name: '自分のフレンドコードを登録',
@@ -92,60 +92,6 @@ module.exports = function handleHelp(msg) {
                     {
                         name: 'wikipediaで調べる',
                         value: '```wiki 〇〇```',
-                    },
-                ],
-            },
-        });
-    } else {
-        msg.channel.send('', {
-            embed: {
-                author: {
-                    name: 'ブキチの使い方(1/2)',
-                    icon_url: 'https://cdn.glitch.com/4ea6ca87-8ea7-482c-ab74-7aee445ea445%2Fthumbnails%2Fbukichi.jpg',
-                },
-                color: 0x1bc2a5,
-                fields: [{
-                        name: 'botのコマンド一覧を表示',
-                        value: '```help または help 2 または help voice```',
-                    },
-                    {
-                        name: '現在のリグマ情報を表示して募集',
-                        value: '```now 参加条件があれば記載```\n',
-                    },
-                    {
-                        name: '次回のリグマ情報を表示して募集',
-                        value: '```next 参加条件があれば記載```\n',
-                    },
-                    {
-                        name: '現在のナワバリ情報を表示して募集',
-                        value: '```nawabari 参加条件があれば記載```\n',
-                    },
-                    {
-                        name: 'サーモンラン情報を表示して募集',
-                        value: '```run 参加条件があれば記載```\n',
-                    },
-                    {
-                        name: '別ゲー募集コマンド',
-                        value: 'フォートナイト：```fn 参加条件があれば記載```\n' +
-                            'マリオカート：```mk 参加条件があれば記載```\n' +
-                            // + "MINECRAFT：```mc 参加条件があれば記載```\n"
-                            'オーバークック2：```oc 参加条件があれば記載```\n' +
-                            'スマブラSP：```sb 参加条件があれば記載```\n' +
-                            'Dead by Daylight：```!dbd 参加条件があれば記載```\n' +
-                            'モンスターハンター：```mh 参加条件があれば記載```\n' +
-                            'ApexLegends：```!apex 参加条件があれば記載```\n'
-                    },
-                    {
-                        name: 'ヒメ派のフェスメンバーを募集',
-                        value: '```fes a 参加条件があれば記載```',
-                    },
-                    {
-                        name: 'イイダ派のフェスメンバーを募集',
-                        value: '```fes b 参加条件があれば記載```',
-                    },
-                    {
-                        name: '役職に応じて自動でフェスメンバーを募集\n※ヒメ派、イイダ派どちらかを投票して役職がついてる場合のみ',
-                        value: '```fes 参加条件があれば記載```',
                     },
                 ],
             },

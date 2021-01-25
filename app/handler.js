@@ -1,4 +1,3 @@
-const handleBan = require("./ban.js");
 const handleBuki = require("./buki.js");
 const handleFriendCode = require("./friendcode.js");
 const handleSpecial = require("./special.js");
@@ -38,14 +37,8 @@ function call(msg) {
     case "pick":
       handlePick(msg);
       break;
-    case "omikuji":
-      handleOmikuji(msg);
-      break;
     case "vpick":
       handleVoicePick(msg);
-      break;
-    case "poll":
-      handlePoll(msg);
       break;
     case "rule":
       handleRule(msg);
@@ -60,30 +53,11 @@ function call(msg) {
     case "weapon":
       handleBuki(command, msg);
       break;
-    case "fes":
-    case "now":
-    case "nou":
-    case "next":
-    case "run":
-    case "nawabari":
-    case "fn":
-    case "mk":
-    case "mc":
-    case "oc":
-    case "sb":
-    case "mh":
-    case "!apex":
-    case "!dbd":
-      handleRecruit(msg);
-      break;
     case "show":
       handleShow(msg, args[0]);
       break;
     case "help":
       handleHelp(msg);
-      break;
-    case "!ban":
-      handleBan(msg);
       break;
     case "fc":
     case "fcadd":
