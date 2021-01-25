@@ -78,10 +78,6 @@ module.exports = function handleHelp(msg) {
                         value: '```kansen 試合回数分の数字を記入```',
                     },
                     {
-                        name: 'アンケートを実施(スペースで区切れば何個でも)',
-                        value: '```poll 選択肢1 選択肢2```',
-                    },
-                    {
                         name: '自分のフレンドコードを表示',
                         value: '```fc @自分```',
                     },
