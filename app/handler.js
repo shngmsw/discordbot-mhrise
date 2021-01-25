@@ -60,7 +60,7 @@ function call(msg) {
     case "fcadd":
       handleFriendCode(msg);
       break;
-    case "stage":
+    case "stageall":
       handleStageInfo(msg);
       break;
   }

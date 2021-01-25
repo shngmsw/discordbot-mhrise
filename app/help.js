@@ -55,6 +55,10 @@ module.exports = function handleHelp(msg) {
                         value: '```show ○○○```\n',
                     },
                     {
+                        name: '24時間後までのステージ情報を表示(リグマ/ガチマ)',
+                        value: '```stageall```',
+                    },
+                    {
                         name: 'ランダム系コマンド',
                         value: 'ブキをランダムで選出：```buki 複数の場合は数字を記入```\n' +
                             'ブキ種別ごとのランダム選出方法を表示：```buki help```\n' +
