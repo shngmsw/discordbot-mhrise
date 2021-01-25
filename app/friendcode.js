@@ -17,8 +17,8 @@ async function selectFriendCode(msg) {
     // let id = args[0].replace('<@', '').replace('>','');
     let id = msg.mentions.users.first().id;
     let fc = await getFC(id, msg, args[0]);
-    console.log("getFC:" + fc[0].code);
     if (fc[0] != null) {
+        console.log("getFC:" + fc[0].code);
         msg.channel.send(composeEmbed(msg.mentions.users.first(), fc[0].code, true));
         return;
     }
