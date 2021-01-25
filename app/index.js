@@ -12,6 +12,7 @@ client.on("message", async (msg) => {
   TTS.main(msg);
 });
 
-client.on("ready", () => {
+client.on("ready", message => {
+  client.user.setPresence({game:{name:('!help')}})
   console.log(`Logged in as ${client.user.tag}!`);
 });

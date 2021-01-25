@@ -53,7 +53,7 @@ function call(msg) {
     case "show":
       handleShow(msg, args[0]);
       break;
-    case "help":
+    case "!help":
       handleHelp(msg);
       break;
     case "fc":
