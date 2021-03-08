@@ -1,38 +1,36 @@
 const common = require("./common.js");
-module.exports = function handleMonster(msg) {
+const getMonster = require("../db/monsters_select.js");
+
+module.exports = async function handleMonster(msg) {
     const prefix = common.getPrefix(msg.guild.id);
     var strCmd = msg.content.replace(prefix, "");
     var name = strCmd;
-    var fs = require("fs");
 
-    const monsters = JSON.parse(fs.readFileSync('./mhwi.json', 'utf8'));// TODO getFromDB
+    const monsters = await getMonster(name);
     for (var i = 0; i < monsters.length; i++) {
-        if (monsters[i].names.JP.indexOf(name) >= 0) {
-            var emb = {
-                embed: {
-                    author: {
-                        name: monsters[i].names.JP + "の弱点属性",
-                    },
-                    color: 0xf02d7d,
-                    fields: [
-                        { name: '火', value: replaceStar(monsters[i].weak.fire), inline: true },
-                        { name: '水', value: replaceStar(monsters[i].weak.water), inline: true },
-                        { name: '雷', value: replaceStar(monsters[i].weak.thunder), inline: true },
-                        { name: '氷', value: replaceStar(monsters[i].weak.ice), inline: true },
-                        { name: '龍', value: replaceStar(monsters[i].weak.dragon), inline: true },
-                        { name: '毒', value: replaceStar(monsters[i].weak.poison), inline: true },
-                        { name: '眠り', value: replaceStar(monsters[i].weak.sleep), inline: true },
-                        { name: '麻痺', value: replaceStar(monsters[i].weak.paralysis), inline: true },
-                        { name: '爆破', value: replaceStar(monsters[i].weak.blast), inline: true },
-                        { name: '気絶', value: replaceStar(monsters[i].weak.stun), inline: true }
-                    ],
-                    "image": {
-                        "url": getImgUrl(monsters[i].icon)
-                    }
+        var emb = {
+            embed: {
+                author: {
+                    name: monsters[i].name_jp + monsters[i].name + "の弱点属性",
+                },
+                color: 0xf02d7d,
+                fields: [
+                    { name: '火', value: replaceStar(monsters[i].weak_fire), inline: true },
+                    { name: '水', value: replaceStar(monsters[i].weak_water), inline: true },
+                    { name: '雷', value: replaceStar(monsters[i].weak_thunder), inline: true },
+                    { name: '氷', value: replaceStar(monsters[i].weak_ice), inline: true },
+                    { name: '龍', value: replaceStar(monsters[i].weak_dragon), inline: true },
+                    { name: '毒', value: replaceStar(monsters[i].weak_poison), inline: true },
+                    { name: '眠り', value: replaceStar(monsters[i].weak_sleep), inline: true },
+                    { name: '麻痺', value: replaceStar(monsters[i].weak_paralysis), inline: true },
+                    { name: '爆破', value: replaceStar(monsters[i].weak_blast), inline: true },
+                    { name: '気絶', value: replaceStar(monsters[i].weak_stun), inline: true }
+                ],
+                "image": {
+                    "url": getImgUrl(monsters[i].icon_url)
                 }
             }
-            msg.channel.send(emb);
-
         }
-    };
-}
+        msg.channel.send(emb);
+    }
+};

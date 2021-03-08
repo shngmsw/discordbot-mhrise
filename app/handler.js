@@ -2,16 +2,17 @@ const handleHelp = require("./help.js");
 const common = require("./common.js");
 const handleMonster = require("./monster.js");
 const handlePrefix = require("./prefix.js");
+
 module.exports = {
   call: call
 };
 
-function call(msg) {
+async function call(msg) {
 
   var strCmd = msg.content.replace(/　/g, " ");
   const args = strCmd.split(" ");
   const command = args.shift().toLowerCase();
-  const prefix = common.getPrefix(msg.guild.id);
+  const prefix = await common.getPrefix(msg.guild.id);
   switch (command) {
     case `${prefix}help`:
       handleHelp(msg);

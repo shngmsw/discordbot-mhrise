@@ -1,5 +1,6 @@
 const common = require("./common.js");
 const prefixes_insert = require("../db/prefixes_insert.js");
+
 module.exports = async function handlePrefix(msg) {
     var strCmd = msg.content.replace(/　/g, ' ');
     strCmd = strCmd.replace('  ', ' ');
