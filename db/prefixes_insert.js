@@ -5,7 +5,7 @@ module.exports = async function insert(id, prefix) {
     try {
         const sql = "INSERT INTO prefixes (server_id, prefix) VALUES ($1, $2) "
             + "ON CONFLICT ON CONSTRAINT prefixes_pkey "
-            + "DO UPDATE SET code=$2";
+            + "DO UPDATE SET prefix=$2";
         const params = [id, prefix];
 
         await db.begin();
