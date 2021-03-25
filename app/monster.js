@@ -13,6 +13,7 @@ module.exports = async function handleMonster(msg) {
                 author: {
                     name: monsters[i].name_jp + monsters[i].name + "の弱点属性",
                 },
+                description: "[モンスター一覧、編集や追加はこちら](https://eloquent-mcclintock-3f709e.netlify.app/)",
                 color: 0xf02d7d,
                 fields: [
                     { name: '火', value: replaceStar(monsters[i].weak_fire), inline: true },
@@ -21,13 +22,16 @@ module.exports = async function handleMonster(msg) {
                     { name: '氷', value: replaceStar(monsters[i].weak_ice), inline: true },
                     { name: '龍', value: replaceStar(monsters[i].weak_dragon), inline: true },
                     { name: '毒', value: replaceStar(monsters[i].weak_poison), inline: true },
-                    { name: '眠り', value: replaceStar(monsters[i].weak_sleep), inline: true },
+                    { name: '睡眠', value: replaceStar(monsters[i].weak_sleep), inline: true },
                     { name: '麻痺', value: replaceStar(monsters[i].weak_paralysis), inline: true },
                     { name: '爆破', value: replaceStar(monsters[i].weak_blast), inline: true },
                     { name: '気絶', value: replaceStar(monsters[i].weak_stun), inline: true }
                 ],
                 "image": {
                     "url": getImgUrl(monsters[i].icon_url)
+                },
+                "footer": {
+                    text: ""
                 }
             }
         }
