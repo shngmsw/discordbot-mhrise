@@ -1,6 +1,6 @@
 const common = require("./common.js");
-module.exports = function handleHelp(msg) {
-    const prefix = common.getPrefix(msg.guild.id);
+module.exports = async function handleHelp(msg) {
+    const prefix = await common.getPrefix(msg.guild.id);
     var strCmd = msg.content.replace(/　/g, ' ');
     strCmd = strCmd.replace('  ', ' ');
     const args = strCmd.split(' ');

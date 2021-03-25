@@ -2,7 +2,7 @@ const common = require("./common.js");
 const getMonster = require("../db/monsters_select.js");
 
 module.exports = async function handleMonster(msg) {
-    const prefix = common.getPrefix(msg.guild.id);
+    const prefix = await common.getPrefix(msg.guild.id);
     var strCmd = msg.content.replace(prefix, "");
     var name = strCmd;
 
@@ -28,7 +28,7 @@ module.exports = async function handleMonster(msg) {
                     { name: '気絶', value: replaceStar(monsters[i].weak_stun), inline: true }
                 ],
                 "image": {
-                    "url": getImgUrl(monsters[i].icon_url)
+                    "url": monsters[i].icon_url
                 },
                 "footer": {
                     text: ""
