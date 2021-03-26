@@ -1,6 +1,6 @@
 const common = require("./common.js");
 const getMonster = require("../db/monsters_select.js");
-
+const URL = process.env.NETLIFY_URL;
 module.exports = async function handleMonster(msg) {
     const prefix = await common.getPrefix(msg.guild.id);
     var strCmd = msg.content.replace(prefix, "");
@@ -13,7 +13,7 @@ module.exports = async function handleMonster(msg) {
                 author: {
                     name: monsters[i].name_jp + monsters[i].name + "の弱点属性",
                 },
-                description: "[モンスター一覧、編集や追加はこちら](https://eloquent-mcclintock-3f709e.netlify.app/)",
+                description: `[モンスター一覧、編集や追加はこちら](${URL})`,
                 color: 0xf02d7d,
                 fields: [
                     { name: '火', value: common.replaceStar(monsters[i].weak_fire), inline: true },
