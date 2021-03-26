@@ -16,16 +16,16 @@ module.exports = async function handleMonster(msg) {
                 description: "[モンスター一覧、編集や追加はこちら](https://eloquent-mcclintock-3f709e.netlify.app/)",
                 color: 0xf02d7d,
                 fields: [
-                    { name: '火', value: replaceStar(monsters[i].weak_fire), inline: true },
-                    { name: '水', value: replaceStar(monsters[i].weak_water), inline: true },
-                    { name: '雷', value: replaceStar(monsters[i].weak_thunder), inline: true },
-                    { name: '氷', value: replaceStar(monsters[i].weak_ice), inline: true },
-                    { name: '龍', value: replaceStar(monsters[i].weak_dragon), inline: true },
-                    { name: '毒', value: replaceStar(monsters[i].weak_poison), inline: true },
-                    { name: '睡眠', value: replaceStar(monsters[i].weak_sleep), inline: true },
-                    { name: '麻痺', value: replaceStar(monsters[i].weak_paralysis), inline: true },
-                    { name: '爆破', value: replaceStar(monsters[i].weak_blast), inline: true },
-                    { name: '気絶', value: replaceStar(monsters[i].weak_stun), inline: true }
+                    { name: '火', value: common.replaceStar(monsters[i].weak_fire), inline: true },
+                    { name: '水', value: common.replaceStar(monsters[i].weak_water), inline: true },
+                    { name: '雷', value: common.replaceStar(monsters[i].weak_thunder), inline: true },
+                    { name: '氷', value: common.replaceStar(monsters[i].weak_ice), inline: true },
+                    { name: '龍', value: common.replaceStar(monsters[i].weak_dragon), inline: true },
+                    { name: '毒', value: common.replaceStar(monsters[i].weak_poison), inline: true },
+                    { name: '睡眠', value: common.replaceStar(monsters[i].weak_sleep), inline: true },
+                    { name: '麻痺', value: common.replaceStar(monsters[i].weak_paralysis), inline: true },
+                    { name: '爆破', value: common.replaceStar(monsters[i].weak_blast), inline: true },
+                    { name: '気絶', value: common.replaceStar(monsters[i].weak_stun), inline: true }
                 ],
                 "image": {
                     "url": monsters[i].icon_url
