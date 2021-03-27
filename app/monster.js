@@ -6,7 +6,7 @@ module.exports = async function handleMonster(msg) {
     var strCmd = msg.content.replace(prefix, "");
     var name = strCmd;
 
-    const monsters = await getMonster(name);
+    const monsters = await getMonster(name, name);
     for (var i = 0; i < monsters.length; i++) {
         var emb = {
             embed: {
