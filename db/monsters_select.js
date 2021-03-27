@@ -4,7 +4,7 @@ module.exports = async function getMonster(name) {
     const db = await getPostgresClient();
     let result;
     try {
-        const sql = "SELECT * FROM monsters WHERE name like %$1% OR name_jp like %$2%";
+        const sql = "SELECT * FROM monsters WHERE name like '%$1%' OR name_jp like '%$2%'";
         const params = [name, name];
 
         result = await db.execute(sql, params);
