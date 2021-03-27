@@ -1,11 +1,11 @@
 var { getPostgresClient } = require('./db.js');
 
-module.exports = async function getMonster(name, nameJP) {
+module.exports = async function getMonster(name) {
     const db = await getPostgresClient();
     let result;
     try {
-        const sql = "SELECT * FROM monsters WHERE name = $1 OR name_jp = $2";
-        const params = [name, nameJP];
+        const sql = "SELECT * FROM monsters WHERE name like %$1% OR name_jp like %$2%";
+        const params = [name, name];
 
         result = await db.execute(sql, params);
 
