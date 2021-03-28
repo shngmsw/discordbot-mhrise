@@ -13,6 +13,7 @@ module.exports = async function handleMonster(msg) {
                 author: {
                     name: monsters[i].name_jp + monsters[i].name + "の弱点属性",
                 },
+                title: monsters[i].name_jp + monsters[i].name,
                 description: `[モンスター一覧、編集や追加はこちら](${URL})`,
                 color: 0xf02d7d,
                 fields: [
