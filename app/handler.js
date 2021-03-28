@@ -13,6 +13,9 @@ async function call(msg) {
   const args = strCmd.split(" ");
   const command = args.shift().toLowerCase();
   const prefix = await common.getPrefix(msg.guild.id);
+  if (!command.startsWith(prefix)) {
+    return;
+  }
   switch (command) {
     case `${prefix}help`:
       handleHelp(msg);
