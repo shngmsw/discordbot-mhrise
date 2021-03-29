@@ -38,4 +38,17 @@ module.exports = async function handleMonster(msg) {
         }
         msg.channel.send(emb);
     }
+    if (monsters.length == 0) {
+        var emb = {
+            embed: {
+                title: "まだ登録されていないようです。",
+                description: `[モンスター一覧、編集や追加はこちら](${URL})`,
+                color: 0xf02d7d,
+                "footer": {
+                    text: ""
+                }
+            }
+        }
+        msg.channel.send(emb);
+    }
 };
