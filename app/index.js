@@ -2,7 +2,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const Handler = require("./handler.js");
-const Dispandar = require("./dispandar.js");
 client.login(process.env.DISCORD_BOT_TOKEN);
 
 client.on("message", async (msg) => {
