@@ -10,7 +10,6 @@ client.on("message", async (msg) => {
     return;
   }
   Handler.call(msg);
-  Dispandar.dispand(msg);
 });
 
 client.on("ready", message => {
